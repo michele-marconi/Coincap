@@ -4,42 +4,42 @@ package com.example.coincap.data.details
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true)
+
 data class Ticker(
-    @Json(name = "base")
+    @field:Json(name = "base")
     val base: String,
-    @Json(name = "bid_ask_spread_percentage")
+    @field:Json(name = "bid_ask_spread_percentage")
     val bidAskSpreadPercentage: Double,
-    @Json(name = "coin_id")
+    @field:Json(name = "coin_id")
     val coinId: String,
-    @Json(name = "converted_last")
+    @field:Json(name = "converted_last")
     val convertedLast: ConvertedLast,
-    @Json(name = "converted_volume")
+    @field:Json(name = "converted_volume")
     val convertedVolume: ConvertedVolume,
-    @Json(name = "is_anomaly")
+    @field:Json(name = "is_anomaly")
     val isAnomaly: Boolean,
-    @Json(name = "is_stale")
+    @field:Json(name = "is_stale")
     val isStale: Boolean,
-    @Json(name = "last")
+    @field:Json(name = "last")
     val last: Double,
-    @Json(name = "last_fetch_at")
+    @field:Json(name = "last_fetch_at")
     val lastFetchAt: String,
-    @Json(name = "last_traded_at")
+    @field:Json(name = "last_traded_at")
     val lastTradedAt: String,
-    @Json(name = "market")
+    @field:Json(name = "market")
     val market: Market,
-    @Json(name = "target")
+    @field:Json(name = "target")
     val target: String,
-    @Json(name = "target_coin_id")
+    @field:Json(name = "target_coin_id")
     val targetCoinId: String,
-    @Json(name = "timestamp")
+    @field:Json(name = "timestamp")
     val timestamp: String,
-    @Json(name = "token_info_url")
+    @field:Json(name = "token_info_url")
     val tokenInfoUrl: Any,
-    @Json(name = "trade_url")
+    @field:Json(name = "trade_url")
     val tradeUrl: String,
-    @Json(name = "trust_score")
+    @field:Json(name = "trust_score")
     val trustScore: String,
-    @Json(name = "volume")
+    @field:Json(name = "volume")
     val volume: Double
 )

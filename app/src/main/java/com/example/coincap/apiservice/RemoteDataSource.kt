@@ -42,7 +42,7 @@ class RemoteDataSource {
         }
     }
 
-    suspend fun getFirst10PopularCoins(
+    suspend fun getCoins(
         vs_currency: String,
         per_page: Int,
         page: Int,
@@ -51,7 +51,7 @@ class RemoteDataSource {
         return getResponse { client.getCoinsList(vs_currency, per_page, page, order) }
     }
 
-    suspend fun gelCoinDetails(id: Int): ResponseApi<CoinDetails?> {
+    suspend fun getCoinDetails(id: String): ResponseApi<CoinDetails?> {
         return getResponse { client.getCoinDetails(id) }
     }
 

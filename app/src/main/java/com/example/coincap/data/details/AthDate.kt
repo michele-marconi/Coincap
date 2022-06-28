@@ -4,128 +4,127 @@ package com.example.coincap.data.details
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true)
 data class AthDate(
-    @Json(name = "aed")
+    @field:Json(name = "aed")
     val aed: String,
-    @Json(name = "ars")
+    @field:Json(name = "ars")
     val ars: String,
-    @Json(name = "aud")
+    @field:Json(name = "aud")
     val aud: String,
-    @Json(name = "bch")
+    @field:Json(name = "bch")
     val bch: String,
-    @Json(name = "bdt")
+    @field:Json(name = "bdt")
     val bdt: String,
-    @Json(name = "bhd")
+    @field:Json(name = "bhd")
     val bhd: String,
-    @Json(name = "bits")
+    @field:Json(name = "bits")
     val bits: String,
-    @Json(name = "bmd")
+    @field:Json(name = "bmd")
     val bmd: String,
-    @Json(name = "bnb")
+    @field:Json(name = "bnb")
     val bnb: String,
-    @Json(name = "brl")
+    @field:Json(name = "brl")
     val brl: String,
-    @Json(name = "btc")
+    @field:Json(name = "btc")
     val btc: String,
-    @Json(name = "cad")
+    @field:Json(name = "cad")
     val cad: String,
-    @Json(name = "chf")
+    @field:Json(name = "chf")
     val chf: String,
-    @Json(name = "clp")
+    @field:Json(name = "clp")
     val clp: String,
-    @Json(name = "cny")
+    @field:Json(name = "cny")
     val cny: String,
-    @Json(name = "czk")
+    @field:Json(name = "czk")
     val czk: String,
-    @Json(name = "dkk")
+    @field:Json(name = "dkk")
     val dkk: String,
-    @Json(name = "dot")
+    @field:Json(name = "dot")
     val dot: String,
-    @Json(name = "eos")
+    @field:Json(name = "eos")
     val eos: String,
-    @Json(name = "eth")
+    @field:Json(name = "eth")
     val eth: String,
-    @Json(name = "eur")
+    @field:Json(name = "eur")
     val eur: String,
-    @Json(name = "gbp")
+    @field:Json(name = "gbp")
     val gbp: String,
-    @Json(name = "hkd")
+    @field:Json(name = "hkd")
     val hkd: String,
-    @Json(name = "huf")
+    @field:Json(name = "huf")
     val huf: String,
-    @Json(name = "idr")
+    @field:Json(name = "idr")
     val idr: String,
-    @Json(name = "ils")
+    @field:Json(name = "ils")
     val ils: String,
-    @Json(name = "inr")
+    @field:Json(name = "inr")
     val inr: String,
-    @Json(name = "jpy")
+    @field:Json(name = "jpy")
     val jpy: String,
-    @Json(name = "krw")
+    @field:Json(name = "krw")
     val krw: String,
-    @Json(name = "kwd")
+    @field:Json(name = "kwd")
     val kwd: String,
-    @Json(name = "link")
+    @field:Json(name = "link")
     val link: String,
-    @Json(name = "lkr")
+    @field:Json(name = "lkr")
     val lkr: String,
-    @Json(name = "ltc")
+    @field:Json(name = "ltc")
     val ltc: String,
-    @Json(name = "mmk")
+    @field:Json(name = "mmk")
     val mmk: String,
-    @Json(name = "mxn")
+    @field:Json(name = "mxn")
     val mxn: String,
-    @Json(name = "myr")
+    @field:Json(name = "myr")
     val myr: String,
-    @Json(name = "ngn")
+    @field:Json(name = "ngn")
     val ngn: String,
-    @Json(name = "nok")
+    @field:Json(name = "nok")
     val nok: String,
-    @Json(name = "nzd")
+    @field:Json(name = "nzd")
     val nzd: String,
-    @Json(name = "php")
+    @field:Json(name = "php")
     val php: String,
-    @Json(name = "pkr")
+    @field:Json(name = "pkr")
     val pkr: String,
-    @Json(name = "pln")
+    @field:Json(name = "pln")
     val pln: String,
-    @Json(name = "rub")
+    @field:Json(name = "rub")
     val rub: String,
-    @Json(name = "sar")
+    @field:Json(name = "sar")
     val sar: String,
-    @Json(name = "sats")
+    @field:Json(name = "sats")
     val sats: String,
-    @Json(name = "sek")
+    @field:Json(name = "sek")
     val sek: String,
-    @Json(name = "sgd")
+    @field:Json(name = "sgd")
     val sgd: String,
-    @Json(name = "thb")
+    @field:Json(name = "thb")
     val thb: String,
-    @Json(name = "try")
+    @field:Json(name = "try")
     val tryX: String,
-    @Json(name = "twd")
+    @field:Json(name = "twd")
     val twd: String,
-    @Json(name = "uah")
+    @field:Json(name = "uah")
     val uah: String,
-    @Json(name = "usd")
+    @field:Json(name = "usd")
     val usd: String,
-    @Json(name = "vef")
+    @field:Json(name = "vef")
     val vef: String,
-    @Json(name = "vnd")
+    @field:Json(name = "vnd")
     val vnd: String,
-    @Json(name = "xag")
+    @field:Json(name = "xag")
     val xag: String,
-    @Json(name = "xau")
+    @field:Json(name = "xau")
     val xau: String,
-    @Json(name = "xdr")
+    @field:Json(name = "xdr")
     val xdr: String,
-    @Json(name = "xlm")
+    @field:Json(name = "xlm")
     val xlm: String,
-    @Json(name = "xrp")
+    @field:Json(name = "xrp")
     val xrp: String,
-    @Json(name = "yfi")
+    @field:Json(name = "yfi")
     val yfi: String,
-    @Json(name = "zar")
+    @field:Json(name = "zar")
     val zar: String
 )

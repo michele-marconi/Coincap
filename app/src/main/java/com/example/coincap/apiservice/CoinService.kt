@@ -17,5 +17,5 @@ interface CoinService {
     ): Response<List<CoinItem>>
 
     @GET("coins/{id}")
-    suspend fun getCoinDetails(@Path("id") id: Int): Response<CoinDetails>
+    suspend fun getCoinDetails(@Path("id") id: String): Response<CoinDetails>
 }
