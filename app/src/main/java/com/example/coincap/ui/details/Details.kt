@@ -80,9 +80,11 @@ fun Detail(id: String, viewModel: DetailsViewModel) {
             textAlign = TextAlign.Center
         )
 
-        LinkText(url = item?.links?.blockchainSite?.first() ?: "")
+        LinkText(url = item?.links?.homepage?.first() ?: "")
 
         Text(text = item?.description?.en ?: "", overflow = TextOverflow.Ellipsis, maxLines = 10)
+
+        LineChartView()
 
     }
 }
