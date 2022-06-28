@@ -1,11 +1,12 @@
 package com.example.coincap.apiservice
 
-import com.example.coincap.data.CoinsResponse
+import com.example.coincap.data.CoinItem
 import com.example.coincap.data.details.CoinDetails
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import timber.log.Timber
 
 class RemoteDataSource {
 
@@ -36,16 +37,18 @@ class RemoteDataSource {
                 ResponseApi.Error(result.errorBody().toString())
             }
         }.getOrElse {
+            Timber.e(it.message)
             ResponseApi.Error(it.message ?: "errorResponse")
         }
     }
 
-    suspend fun gelPopularMovies(
+    suspend fun getFirst10PopularCoins(
         vs_currency: String,
         per_page: Int,
-        page: Int
-    ): ResponseApi<CoinsResponse?> {
-        return getResponse { client.getCoinsList(vs_currency, per_page, page) }
+        page: Int,
+        order : String
+    ): ResponseApi<List<CoinItem>?> {
+        return getResponse { client.getCoinsList(vs_currency, per_page, page, order) }
     }
 
     suspend fun gelCoinDetails(id: Int): ResponseApi<CoinDetails?> {

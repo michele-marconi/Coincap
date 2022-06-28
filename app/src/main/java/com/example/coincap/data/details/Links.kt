@@ -2,7 +2,9 @@ package com.example.coincap.data.details
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class Links(
     @Json(name = "announcement_url")
     val announcementUrl: List<String>,
