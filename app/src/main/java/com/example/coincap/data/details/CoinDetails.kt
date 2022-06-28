@@ -68,4 +68,14 @@ data class CoinDetails(
     val symbol: String,
     @Json(name = "tickers")
     val tickers: List<Ticker>
-)
+) {
+    override fun toString(): String {
+        return """
+            id: $id
+            name: $name
+            description: $description
+            marketCapRank: $marketCapRank
+            lastUpdated: $lastUpdated
+            """.trimIndent()
+    }
+}
