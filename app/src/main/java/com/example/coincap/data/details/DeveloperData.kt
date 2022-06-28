@@ -1,14 +1,27 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class DeveloperData(
-    val closed_issues: Int,
-    val code_additions_deletions_4_weeks: CodeAdditionsDeletions4Weeks,
-    val commit_count_4_weeks: Int,
+    @Json(name = "closed_issues")
+    val closedIssues: Int,
+    @Json(name = "code_additions_deletions_4_weeks")
+    val codeAdditionsDeletions4Weeks: CodeAdditionsDeletions4Weeks,
+    @Json(name = "commit_count_4_weeks")
+    val commitCount4Weeks: Int,
+    @Json(name = "forks")
     val forks: Int,
-    val last_4_weeks_commit_activity_series: List<Int>,
-    val pull_request_contributors: Int,
-    val pull_requests_merged: Int,
+    @Json(name = "last_4_weeks_commit_activity_series")
+    val last4WeeksCommitActivitySeries: List<Int>,
+    @Json(name = "pull_request_contributors")
+    val pullRequestContributors: Int,
+    @Json(name = "pull_requests_merged")
+    val pullRequestsMerged: Int,
+    @Json(name = "stars")
     val stars: Int,
+    @Json(name = "subscribers")
     val subscribers: Int,
-    val total_issues: Int
+    @Json(name = "total_issues")
+    val totalIssues: Int
 )

@@ -1,5 +1,9 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class Platforms(
-    val : String
+    @Json(name = "")
+    val x: String
 )

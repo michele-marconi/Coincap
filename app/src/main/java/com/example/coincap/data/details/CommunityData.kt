@@ -1,11 +1,21 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class CommunityData(
-    val facebook_likes: Any,
-    val reddit_accounts_active_48h: Int,
-    val reddit_average_comments_48h: Double,
-    val reddit_average_posts_48h: Double,
-    val reddit_subscribers: Int,
-    val telegram_channel_user_count: Any,
-    val twitter_followers: Int
+    @Json(name = "facebook_likes")
+    val facebookLikes: Any,
+    @Json(name = "reddit_accounts_active_48h")
+    val redditAccountsActive48h: Int,
+    @Json(name = "reddit_average_comments_48h")
+    val redditAverageComments48h: Double,
+    @Json(name = "reddit_average_posts_48h")
+    val redditAveragePosts48h: Double,
+    @Json(name = "reddit_subscribers")
+    val redditSubscribers: Int,
+    @Json(name = "telegram_channel_user_count")
+    val telegramChannelUserCount: Any,
+    @Json(name = "twitter_followers")
+    val twitterFollowers: Int
 )

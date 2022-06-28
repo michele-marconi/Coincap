@@ -1,6 +1,11 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class PublicInterestStats(
-    val alexa_rank: Int,
-    val bing_matches: Any
+    @Json(name = "alexa_rank")
+    val alexaRank: Int,
+    @Json(name = "bing_matches")
+    val bingMatches: Any
 )

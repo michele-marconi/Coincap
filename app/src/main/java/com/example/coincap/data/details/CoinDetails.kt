@@ -1,36 +1,71 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class CoinDetails(
-    val additional_notices: List<Any>,
-    val asset_platform_id: Any,
-    val block_time_in_minutes: Int,
+    @Json(name = "additional_notices")
+    val additionalNotices: List<Any>,
+    @Json(name = "asset_platform_id")
+    val assetPlatformId: Any,
+    @Json(name = "block_time_in_minutes")
+    val blockTimeInMinutes: Int,
+    @Json(name = "categories")
     val categories: List<String>,
-    val coingecko_rank: Int,
-    val coingecko_score: Double,
-    val community_data: CommunityData,
-    val community_score: Double,
-    val country_origin: String,
+    @Json(name = "coingecko_rank")
+    val coingeckoRank: Int,
+    @Json(name = "coingecko_score")
+    val coingeckoScore: Double,
+    @Json(name = "community_data")
+    val communityData: CommunityData,
+    @Json(name = "community_score")
+    val communityScore: Double,
+    @Json(name = "country_origin")
+    val countryOrigin: String,
+    @Json(name = "description")
     val description: Description,
-    val developer_data: DeveloperData,
-    val developer_score: Double,
-    val genesis_date: String,
-    val hashing_algorithm: String,
+    @Json(name = "developer_data")
+    val developerData: DeveloperData,
+    @Json(name = "developer_score")
+    val developerScore: Double,
+    @Json(name = "genesis_date")
+    val genesisDate: String,
+    @Json(name = "hashing_algorithm")
+    val hashingAlgorithm: String,
+    @Json(name = "id")
     val id: String,
+    @Json(name = "image")
     val image: Image,
-    val last_updated: String,
+    @Json(name = "last_updated")
+    val lastUpdated: String,
+    @Json(name = "links")
     val links: Links,
-    val liquidity_score: Double,
+    @Json(name = "liquidity_score")
+    val liquidityScore: Double,
+    @Json(name = "localization")
     val localization: Localization,
-    val market_cap_rank: Int,
-    val market_data: MarketData,
+    @Json(name = "market_cap_rank")
+    val marketCapRank: Int,
+    @Json(name = "market_data")
+    val marketData: MarketData,
+    @Json(name = "name")
     val name: String,
+    @Json(name = "platforms")
     val platforms: Platforms,
-    val public_interest_score: Double,
-    val public_interest_stats: PublicInterestStats,
-    val public_notice: Any,
-    val sentiment_votes_down_percentage: Double,
-    val sentiment_votes_up_percentage: Double,
-    val status_updates: List<Any>,
+    @Json(name = "public_interest_score")
+    val publicInterestScore: Double,
+    @Json(name = "public_interest_stats")
+    val publicInterestStats: PublicInterestStats,
+    @Json(name = "public_notice")
+    val publicNotice: Any,
+    @Json(name = "sentiment_votes_down_percentage")
+    val sentimentVotesDownPercentage: Double,
+    @Json(name = "sentiment_votes_up_percentage")
+    val sentimentVotesUpPercentage: Double,
+    @Json(name = "status_updates")
+    val statusUpdates: List<Any>,
+    @Json(name = "symbol")
     val symbol: String,
+    @Json(name = "tickers")
     val tickers: List<Ticker>
 )

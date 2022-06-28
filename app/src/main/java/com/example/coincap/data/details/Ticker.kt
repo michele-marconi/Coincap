@@ -1,22 +1,43 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class Ticker(
+    @Json(name = "base")
     val base: String,
-    val bid_ask_spread_percentage: Double,
-    val coin_id: String,
-    val converted_last: ConvertedLast,
-    val converted_volume: ConvertedVolume,
-    val is_anomaly: Boolean,
-    val is_stale: Boolean,
+    @Json(name = "bid_ask_spread_percentage")
+    val bidAskSpreadPercentage: Double,
+    @Json(name = "coin_id")
+    val coinId: String,
+    @Json(name = "converted_last")
+    val convertedLast: ConvertedLast,
+    @Json(name = "converted_volume")
+    val convertedVolume: ConvertedVolume,
+    @Json(name = "is_anomaly")
+    val isAnomaly: Boolean,
+    @Json(name = "is_stale")
+    val isStale: Boolean,
+    @Json(name = "last")
     val last: Double,
-    val last_fetch_at: String,
-    val last_traded_at: String,
+    @Json(name = "last_fetch_at")
+    val lastFetchAt: String,
+    @Json(name = "last_traded_at")
+    val lastTradedAt: String,
+    @Json(name = "market")
     val market: Market,
+    @Json(name = "target")
     val target: String,
-    val target_coin_id: String,
+    @Json(name = "target_coin_id")
+    val targetCoinId: String,
+    @Json(name = "timestamp")
     val timestamp: String,
-    val token_info_url: Any,
-    val trade_url: String,
-    val trust_score: String,
+    @Json(name = "token_info_url")
+    val tokenInfoUrl: Any,
+    @Json(name = "trade_url")
+    val tradeUrl: String,
+    @Json(name = "trust_score")
+    val trustScore: String,
+    @Json(name = "volume")
     val volume: Double
 )

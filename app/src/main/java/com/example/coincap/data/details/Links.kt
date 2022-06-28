@@ -1,15 +1,29 @@
 package com.example.coincap.data.details
 
+
+import com.squareup.moshi.Json
+
 data class Links(
-    val announcement_url: List<String>,
-    val bitcointalk_thread_identifier: Any,
-    val blockchain_site: List<String>,
-    val chat_url: List<String>,
-    val facebook_username: String,
+    @Json(name = "announcement_url")
+    val announcementUrl: List<String>,
+    @Json(name = "bitcointalk_thread_identifier")
+    val bitcointalkThreadIdentifier: Any,
+    @Json(name = "blockchain_site")
+    val blockchainSite: List<String>,
+    @Json(name = "chat_url")
+    val chatUrl: List<String>,
+    @Json(name = "facebook_username")
+    val facebookUsername: String,
+    @Json(name = "homepage")
     val homepage: List<String>,
-    val official_forum_url: List<String>,
-    val repos_url: ReposUrl,
-    val subreddit_url: String,
-    val telegram_channel_identifier: String,
-    val twitter_screen_name: String
+    @Json(name = "official_forum_url")
+    val officialForumUrl: List<String>,
+    @Json(name = "repos_url")
+    val reposUrl: ReposUrl,
+    @Json(name = "subreddit_url")
+    val subredditUrl: String,
+    @Json(name = "telegram_channel_identifier")
+    val telegramChannelIdentifier: String,
+    @Json(name = "twitter_screen_name")
+    val twitterScreenName: String
 )
