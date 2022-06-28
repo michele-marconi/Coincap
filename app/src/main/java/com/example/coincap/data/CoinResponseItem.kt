@@ -56,4 +56,17 @@ data class CoinResponseItem(
     val totalSupply: Double,
     @Json(name = "total_volume")
     val totalVolume: Long
-)
+) {
+    override fun toString(): String {
+        return """
+            id: $id
+            name: $name
+            marketCap: $marketCap
+            marketCapRank: $marketCapRank
+            ath: $ath
+            athDate number: $athDate
+            circulatingSupply: $circulatingSupply
+            currentPrice: $currentPrice
+            """.trimIndent()
+    }
+}
