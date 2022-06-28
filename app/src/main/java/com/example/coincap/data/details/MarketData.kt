@@ -2,7 +2,9 @@ package com.example.coincap.data.details
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class MarketData(
     @Json(name = "ath")
     val ath: Ath,
@@ -66,8 +68,6 @@ data class MarketData(
     val priceChangePercentage200dInCurrency: PriceChangePercentage14dInCurrency,
     @Json(name = "price_change_percentage_24h")
     val priceChangePercentage24h: Double,
-    @Json(name = "price_change_percentage_24h_in_currency")
-    val priceChangePercentage24hInCurrency: PriceChangePercentage24hInCurrency,
     @Json(name = "price_change_percentage_30d")
     val priceChangePercentage30d: Double,
     @Json(name = "price_change_percentage_30d_in_currency")

@@ -2,7 +2,9 @@ package com.example.coincap.data.details
 
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class CoinDetails(
     @Json(name = "additional_notices")
     val additionalNotices: List<Any>,
@@ -68,14 +70,4 @@ data class CoinDetails(
     val symbol: String,
     @Json(name = "tickers")
     val tickers: List<Ticker>
-) {
-    override fun toString(): String {
-        return """
-            id: $id
-            name: $name
-            description: $description
-            marketCapRank: $marketCapRank
-            lastUpdated: $lastUpdated
-            """.trimIndent()
-    }
-}
+)

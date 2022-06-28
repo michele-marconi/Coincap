@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.coincap.navigation.Coins
+import com.example.coincap.ui.home.Home
 import com.example.coincap.ui.theme.CoincapTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,10 +29,10 @@ class MainActivity : ComponentActivity() {
                         arguments = listOf(navArgument("id") { type = NavType.IntType })
                     ) { backStackEntry ->
                         val id = backStackEntry.arguments?.getInt("id")!!
-                        Details(
+                        /*Details(
                             navController,
                             id
-                        )
+                        )*/
                     }
                 }
             }
