@@ -1,4 +1,4 @@
-package com.example.coincap
+package com.example.coincap.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
