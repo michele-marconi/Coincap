@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 
 data class PublicInterestStats(
     @field:Json(name = "alexa_rank")
-    val alexaRank: Int,
+    val alexaRank: Int?,
     @field:Json(name = "bing_matches")
     val bingMatches: Any
 )

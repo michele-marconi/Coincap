@@ -24,7 +24,7 @@ fun LinkText(url: String) {
         append(mStr)
         addStyle(
             style = SpanStyle(
-                color = Color.Blue,
+                color = Color.Green,
                 textDecoration = TextDecoration.Underline
             ), start = 0, end = mStr.length
         )

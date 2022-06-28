@@ -106,7 +106,4 @@ dependencies {
     def paging_version = "3.1.1"
     implementation "androidx.paging:paging-runtime:$paging_version"
     implementation "androidx.paging:paging-compose:1.0.0-alpha15"
-
-    // Chart library
-    implementation "io.github.bytebeats:compose-charts:0.1.2"
 }

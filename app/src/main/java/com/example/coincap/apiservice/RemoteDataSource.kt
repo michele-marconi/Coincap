@@ -2,6 +2,7 @@ package com.example.coincap.apiservice
 
 import com.example.coincap.data.CoinItem
 import com.example.coincap.data.details.CoinDetails
+import com.example.coincap.data.history.PricesHistory
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -49,6 +50,15 @@ class RemoteDataSource {
         order : String
     ): ResponseApi<List<CoinItem>?> {
         return getResponse { client.getCoinsList(vs_currency, per_page, page, order) }
+    }
+
+    suspend fun getCoinHistory(
+        id: String,
+        vs_currency: String,
+        from: String,
+        to: String,
+    ): ResponseApi<PricesHistory?> {
+        return getResponse { client.getCoinHistory(id, vs_currency, from, to) }
     }
 
     suspend fun getCoinDetails(id: String): ResponseApi<CoinDetails?> {

@@ -1,41 +1,70 @@
 package com.example.coincap.ui.details
 
-import androidx.compose.foundation.layout.fillMaxSize
+import android.graphics.PointF
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
+import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import me.bytebeats.views.charts.line.LineChart
-import me.bytebeats.views.charts.line.LineChartData
-import me.bytebeats.views.charts.line.render.line.SolidLineDrawer
-import me.bytebeats.views.charts.line.render.point.FilledCircularPointDrawer
-import me.bytebeats.views.charts.line.render.xaxis.SimpleXAxisDrawer
-import me.bytebeats.views.charts.line.render.yaxis.SimpleYAxisDrawer
-import me.bytebeats.views.charts.simpleChartAnimation
+import com.example.coincap.data.history.PricesHistory
 
 @Composable
-fun LineChartView() {
-    LineChart(
-        lineChartData = LineChartData(
-            points = listOf(
-                LineChartData.Point(10f, "Line 1"),
-                LineChartData.Point(14f, "Line 2"),
-                LineChartData.Point(30f, "Line 3")
-            )
-        ),
+fun LineChart(coinHistory: PricesHistory?) {
+    val history = mutableListOf<Int>()
+
+    coinHistory?.prices?.forEach { record ->
+        history.add(record[1].toInt())
+    }
+
+    Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 32.dp)
-            .height(200.dp),
-        animation = simpleChartAnimation(),
-        pointDrawer = FilledCircularPointDrawer(color = Color.White),
-        lineDrawer = SolidLineDrawer(color = Color.White),
-        xAxisDrawer = SimpleXAxisDrawer(drawLabelEvery = 10),
-        yAxisDrawer = SimpleYAxisDrawer(drawLabelEvery = 10),
-        horizontalOffset = 5f
-    )
+            .height(360.dp)
+            .padding(16.dp),
+        elevation = 10.dp
+    ) {
+        Column(
+            modifier = Modifier
+                .padding(16.dp)
+                .wrapContentSize(align = Alignment.BottomStart)
+        ) {
+            Canvas(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp)
+            ) {
+                val distance = size.width / (history.size + 1)
+                var currentX = 0F
+                val maxValue = history.maxOrNull() ?: 0
+                val points = mutableListOf<PointF>()
+
+                history.forEachIndexed { index, data ->
+                    if (history.size >= index + 2) {
+                        val y0 = (maxValue - data) * (size.height / maxValue)
+                        val x0 = currentX + distance
+                        points.add(PointF(x0, y0))
+                        currentX += distance
+                    }
+                }
+
+                for (i in 0 until points.size - 1) {
+                    drawLine(
+                        start = Offset(points[i].x, points[i].y),
+                        end = Offset(points[i + 1].x, points[i + 1].y),
+                        color = Color.Cyan,
+                        strokeWidth = 4f
+                    )
+                }
+            }
+        }
+    }
 }
