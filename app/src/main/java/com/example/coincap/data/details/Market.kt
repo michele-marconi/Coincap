@@ -4,12 +4,12 @@ package com.example.coincap.data.details
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
-@JsonClass(generateAdapter = true)
+
 data class Market(
-    @Json(name = "has_trading_incentive")
+    @field:Json(name = "has_trading_incentive")
     val hasTradingIncentive: Boolean,
-    @Json(name = "identifier")
+    @field:Json(name = "identifier")
     val identifier: String,
-    @Json(name = "name")
+    @field:Json(name = "name")
     val name: String
 )

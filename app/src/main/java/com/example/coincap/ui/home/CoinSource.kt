@@ -18,7 +18,7 @@ class CoinSource(private val webService: RemoteDataSource) : PagingSource<Int, C
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CoinItem> {
         return try {
             val nextPage = params.key ?: 1
-            val coinsList = webService.getFirst10PopularCoins(
+            val coinsList = webService.getCoins(
                 vs_currency = VS_CURRENCY,
                 per_page = PER_PAGE,
                 page = nextPage,

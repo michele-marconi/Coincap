@@ -16,6 +16,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.example.coincap.data.CoinItem
+import com.example.coincap.navigation.Coins
 import com.example.coincap.ui.theme.CoincapTheme
 import com.example.coincap.ui.theme.Purple500
 import kotlinx.coroutines.flow.Flow
@@ -43,11 +44,11 @@ fun CoinsList(
         items(coinsListItems) { item ->
             item?.let {
                 CoinListItem(coinData = item, onClick = {
-                    /*navController.navigate(
+                    navController.navigate(
                             Coins.Details(
                                 item.id
                             ).route
-                        )*/
+                        )
                 })
             }
         }

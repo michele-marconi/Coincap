@@ -69,7 +69,7 @@ fun CoinListItem(coinData: CoinItem, onClick: () -> Unit) {
                     text = coinData.marketCapRank.toString(),
                     fontWeight = FontWeight.Bold,
                     style = typography.body2,
-                    color = Color.Blue
+                    color = Color.Cyan
                 )
             }
             Column(
