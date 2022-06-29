@@ -1,3 +1,3 @@
 package com.example.coincap.utils
 
-const val SEVEN_DAYS_TO_MILLISEC = 604800000
+const val SEVEN_DAYS_TO_MILLISEC = 604800

@@ -19,10 +19,10 @@ import com.example.coincap.data.history.PricesHistory
 
 @Composable
 fun LineChart(coinHistory: PricesHistory?) {
-    val history = mutableListOf<Int>()
+    val history = mutableListOf<Double>()
 
     coinHistory?.prices?.forEach { record ->
-        history.add(record[1].toInt())
+        history.add(record[1])
     }
 
     Card(
@@ -49,9 +49,9 @@ fun LineChart(coinHistory: PricesHistory?) {
 
                 history.forEachIndexed { index, data ->
                     if (history.size >= index + 2) {
-                        val y0 = (maxValue - data) * (size.height / maxValue)
+                        val y0 = (maxValue.toDouble() - data) * (size.height / maxValue.toDouble())
                         val x0 = currentX + distance
-                        points.add(PointF(x0, y0))
+                        points.add(PointF(x0, y0.toFloat()))
                         currentX += distance
                     }
                 }
