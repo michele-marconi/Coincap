@@ -84,8 +84,6 @@ fun Detail(id: String, viewModel: DetailsViewModel) {
             textAlign = TextAlign.Center
         )
 
-        LinkText(url = item?.links?.homepage?.first() ?: "")
-
         Text(
             modifier = Modifier.padding(16.dp),
             text = item?.description?.en ?: "",
@@ -93,6 +91,7 @@ fun Detail(id: String, viewModel: DetailsViewModel) {
             maxLines = 10
         )
 
+        LinkText(url = item?.links?.homepage?.first() ?: "")
         LineChart(coinHistory)
 
     }
